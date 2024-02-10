@@ -38,12 +38,43 @@ The experiment displayed to the user would reflect the information shown in the 
 
 ## How to use
 
+(Very basic instructions that still need to be updated)
+
+Step 0) Set up your own BACE application prior to running this.
+
+Step 1) Download the survey components.
+
+- Download the [survey from definition](https://github.com/mhdrake/bace_surveycto/blob/main/BACE%20Example.xlsx)
+- Download the [BACE field plug-in](https://github.com/mhdrake/bace_surveycto/blob/main/bace.fieldplugin.zip).
+
+Step 1) Create a new Survey CTO form.
+
+- Navigate to the Design tab from Survey CTO.
+- Click to "Add Form, Group, or Dataset" (Plus bar near existing forms).
+- Click "Upload form definition"
+  - Add the survey form definition to the Form definition section.
+  - Select "Attach filed?" -> "Yes"
+    - Add the bace.fieldplugin.zip file to this.
+  - Mark whether you want to deploy the survey immediately or upload as a draft.
+  - Click "Upload"
+- Update the field plug-in parameters (See section below.)
+  - Make sure to update the bace_url function with the url to the /surveyCTO route on your application.
+  This is necessary to connect the plug-in with your application.
+  - Update additional parameters by editing the bace_response question.
+    - Scroll down to the field titled bace_response
+    - Click "Edit this field"
+    - Update the plug-in parameters.
+    Add a comma separated list of key = value.
+    To reference variables from other fields, use ${variable_name}.
+    Otherwise, input the value.
+    - Click 'Save now' to save changes.
+
+Once you have set this up, your survey cto form is connected to your BACE application.
+
 ### Getting started
 
-UPDATE LINKS FOR ALL OF THESE.
-
-1. Download the [sample form](https://github.com/mhdrake/bace_surveycto) from this repo and upload it to your SurveyCTO server.
-2. Download the [bace.fieldplugin.zip file](https://github.com/mhdrake/bace_surveycto) from this repo, and attach it to the test form on your SurveyCTO server.
+1. Download the [sample form](https://github.com/mhdrake/bace_surveycto/blob/main/BACE%20Example.xlsx) from this repo and upload it to your SurveyCTO server.
+2. Download the [bace.fieldplugin.zip file](https://github.com/mhdrake/bace_surveycto/blob/main/bace.fieldplugin.zip) from this repo, and attach it to the test form on your SurveyCTO server.
 3. Make sure to provide the correct parameters (see below).
 
 ### Parameters
@@ -68,16 +99,14 @@ UPDATE LINKS FOR ALL OF THESE.
 
 Here is an example *appearance* for your *text* field that uses this field plug-in: 
 
-```
+![Alt text](images/image.png)
 
-
-```
 
 ## More Resources Provided by SurveyCTO
 
 * **Sample form**  
 This form will help you explore the features in this field plug-in.  
-[Download sample form](https://github.com/surveycto/conjoint/raw/master/extras/Sample%20form%20-%20Conjoint%20Analysis.xlsx)  
+[Download sample form.](https://github.com/mhdrake/bace_surveycto/blob/main/BACE%20Example.xlsx)
 
 * **Developer documentation**  
 Instructions and resources for developing your own field plug-ins.  
