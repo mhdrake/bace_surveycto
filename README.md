@@ -81,7 +81,6 @@ Once you have set this up, your survey cto form is connected to your BACE applic
 
 | Key | Value |
 | --- | --- |
-
 | `bace_url` (required) | String. Specifies the url to your BACE application. It should specify the https://\<your-bace-url\>/surveyCTO route. |
 | `unique_profile_id` (required) | String. A unique uuid that is associated with an individual. By default, this is created using `once(uuid())` in a calculate field at the start of your survey. |
 | `previous_choice` (required) | String. The choice selected by the respondent on the previous question. Calculated within a repeat group as `if(index()=1, null, indexed-repeat(${selected_choice}, ${bace_repeat}, index() - 1))`. |
